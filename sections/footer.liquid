@@ -138,8 +138,21 @@
 {%- endcapture -%}
 
 <footer class="site-footer" role="contentinfo" data-section-id="{{ section.id }}" data-section-type="footer-section">
+ 
+  <div class="customer-service-container-foot">
+    <div class="fsd-containers page-width">
+      <div class="fsd-left-img"></div>
+      <div class="fsd-right">
+        <h5>Have a question? Ask us!</h5>
+        <h4><a href="#">Contact Customer Service<span></span></a></h4>
+      </div>
+    </div>
+  </div>
   <div class="page-width">
+    
     <div class="site-footer__content">
+      
+      
       {%- for block in section.blocks -%}
 
         <div class="site-footer__item
@@ -319,7 +332,7 @@
         {%- else -%}
           <div class="small--hide site-footer-item-align-right {% if show_selectors or show_payment_icons %}site-footer-item-center-vertically{% endif %}">
             <small class="site-footer__copyright-content">&copy; {{ 'now' | date: "%Y" }}, {{ shop.name | link_to: routes.root_url }}</small>
-            <small class="site-footer__copyright-content site-footer__copyright-content-powered-by">{{ powered_by_link }}</small>
+            <!-- <small class="site-footer__copyright-content site-footer__copyright-content-powered-by">{{ powered_by_link }}</small> -->
           </div>
         {%- endif -%}
       </div>
@@ -333,13 +346,13 @@
       {%- if social_icons and show_selectors -%}
         <div class="grid__item small--hide site-footer-item-align-right {% if show_payment_icons %}one-half{% endif %}">
           <small class="site-footer__copyright-content">&copy; {{ 'now' | date: "%Y" }}, {{ shop.name | link_to: routes.root_url }}</small>
-          <small class="site-footer__copyright-content site-footer__copyright-content--powered-by">{{ powered_by_link }}</small>
+          <!-- <small class="site-footer__copyright-content site-footer__copyright-content--powered-by">{{ powered_by_link }}</small> -->
         </div>
       {%- endif -%}
 
       <div class="grid__item small--one-whole {{ copyright_show_class }} site-footer-item-align-right">
         <small class="site-footer__copyright-content">&copy; {{ 'now' | date: "%Y" }}, {{ shop.name | link_to: routes.root_url }}</small>
-        <small class="site-footer__copyright-content site-footer__copyright-content--powered-by">{{ powered_by_link }}</small>
+        <!-- <small class="site-footer__copyright-content site-footer__copyright-content--powered-by">{{ powered_by_link }}</small> -->
       </div>
     </div>
   </div>

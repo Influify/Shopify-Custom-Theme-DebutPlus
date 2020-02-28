@@ -155,8 +155,20 @@
     </div>
 
     <nav class="mobile-nav-wrapper medium-up--hide" role="navigation">
-      <ul id="MobileNav" class="mobile-nav">
-        {% for link in linklists[section.settings.main_linklist].links %}
+      <ul id="MobileNav" class="mobile-nav custom_mobile-nav">
+        {% for link in linklists.mobile-navigation.links %}
+        <li class="mobile-nav__item">
+            <div class="mobile-navigation">{{ link.title }}</div>
+            <uL>
+            {% for sub_link in link.links %}
+            <li class="mobile_sub_menu">
+              <a href="{{ sub_link.url }}">{{ sub_link.title }}</a>
+              </li>
+            {% endfor %}
+            </uL>
+        </li>
+        {% endfor %}
+        <!-- {% for link in linklists[section.settings.main_linklist].links %}
           {%- assign outerLoopIndex = forloop.index -%}
 
           <li class="mobile-nav__item{% unless forloop.last %} border-bottom{% endunless %}">
@@ -245,7 +257,7 @@
               </a>
             {% endif %}
           </li>
-        {% endfor %}
+        {% endfor %} -->
       </ul>
     </nav>
   </header>
